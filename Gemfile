@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.4'
+
 gem 'rails', '~> 5.0.4'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -11,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'adminlte2-rails'
+gem 'figaro'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
