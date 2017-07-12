@@ -14,6 +14,7 @@ gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'adminlte2-rails'
 gem 'figaro'
+gem 'devise'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
