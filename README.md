@@ -14,3 +14,10 @@ In the project's root directory:
 ```
 $ rails s
 ```
+
+## Deploy
+In the project's root directory:
+```
+$ git push heroku master
+$ heroku run rake db:migrate
+```
