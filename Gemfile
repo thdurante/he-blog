@@ -12,7 +12,9 @@ gem 'pg'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
-  gem 'byebug', platform: :mri
+  gem 'pry'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
 end
 
 group :development do
