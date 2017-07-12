@@ -15,7 +15,7 @@ gem 'adminlte2-rails'
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'pry'
-  gem 'rubocop'
+  gem 'rubocop', require: false
   gem 'rubocop-rspec'
   gem 'factory_girl_rails'
   gem 'faker'
