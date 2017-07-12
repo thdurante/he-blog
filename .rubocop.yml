@@ -38,3 +38,6 @@ Style/TrailingCommaInLiteral:
 Style/AlignHash:
   Enabled: true
   EnforcedColonStyle: table
+
+EndOfLine:
+  Enabled: false

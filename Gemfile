@@ -10,6 +10,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'adminlte2-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
