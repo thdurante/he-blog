@@ -1,7 +1,7 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
     <div class="callout callout-danger" role="alert">
-      <%= t('application.error_messages.pre') %> <%= pluralize(object.errors.count, t('application.error_messages.error')) %>.
+      <%= t('application.error_messages.pre') %> <%= pluralize(object.errors.count, 'erro', 'erros') %>
     </div>
     <ul>
       <% object.errors.full_messages.each do |msg| %>
