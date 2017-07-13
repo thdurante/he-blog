@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'adminlte2-rails'
+gem 'jquery-ui-rails'
 gem 'figaro'
 gem 'devise'
 
