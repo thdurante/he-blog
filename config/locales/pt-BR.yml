@@ -6,6 +6,21 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+
+    # MODELS
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      user:
+        name: Nome
+        email: E-mail
+        password: Senha
+        confirm_password: Confirme a senha
+        password_confirmation: Confirmação de senha
+
+
   date:
     abbr_day_names:
     - Dom
@@ -223,10 +238,13 @@ pt-BR:
   application:
     app_name: HeBlog
     sign_out: Logout
-    sign_up: Registrar
+    sign_up:
+      text: Registrar
+      message: Crie sua conta para continuar
     forgot_password: 'Esqueceu sua senha?'
     resend_confirmation: 'Não recebeu as instruções de confirmação?'
     resend_unlock: 'Não recebeu as intruções de desbloqueio?'
+    remember_password: Lembrar senha
     sign_in:
       text: Login
       message: Faça login para iniciar a sessão
@@ -239,3 +257,6 @@ pt-BR:
     footer:
       text: Processo seletivo HE:labs
       developed_by: Desenvolvido por
+    error_messages:
+      pre: O formulário contém
+      error: erro

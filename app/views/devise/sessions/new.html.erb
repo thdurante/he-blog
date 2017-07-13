@@ -1,30 +1,22 @@
 <% content_for :title, t('application.sign_in.text') %>
 <% content_for :initial_message, t('application.sign_in.message') %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <%= render partial: 'shared/flash_messages' %>
 
   <div class="form-group has-feedback">
-    <%= f.email_field :email, placeholder: 'E-mail', class: 'form-control', autofocus: true %>
+    <%= f.input_field :email, placeholder: 'E-mail', class: 'form-control', autofocus: true %>
     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
   </div>
 
   <div class="form-group has-feedback">
-    <%= f.password_field :password, placeholder: 'Senha', class: 'form-control', autocomplete: 'off' %>
+    <%= f.input_field :password, placeholder: 'Senha', class: 'form-control', autocomplete: 'off' %>
     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
   </div>
 
   <div class="row">
-    <div class="col-xs-8">
-      <% if devise_mapping.rememberable? -%>
-          <em>
-            <%= f.check_box :remember_me %>
-            <%= f.label 'Lembrar-se' %>
-          </em>
-      <% end -%>
-    </div>
-    <div class="col-xs-4">
+    <div class="col-xs-4 col-xs-offset-8">
       <%= f.submit t('application.sign_in.text'), class: 'btn btn-primary btn-block btn-flat' %>
     </div>
   </div>

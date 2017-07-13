@@ -16,6 +16,7 @@ gem 'adminlte2-rails'
 gem 'jquery-ui-rails'
 gem 'figaro'
 gem 'devise'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
