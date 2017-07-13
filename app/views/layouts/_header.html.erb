@@ -1,0 +1,49 @@
+<!-- BEGIN HEADER -->
+<header class="main-header">
+  <a href="/" class="logo">
+    <span class="logo-mini"><b>H</b>B</span>
+    <span class="logo-lg">HE<b>Blog</b></span>
+  </a>
+
+  <!-- BEGIN NAVBAR -->
+  <nav class="navbar navbar-static-top" role="navigation">
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only"><%= t('application.toggle_navigation') %></span>
+    </a>
+
+    <!-- BEGIN NAVBAR MENU -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+
+        <!-- BEGIN USER MENU -->
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <img src="/assets/user2-160x160.jpg" class="user-image" alt="User Image">
+            <span class="hidden-xs">Alexander Pierce</span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li class="user-header">
+              <img src="/assets/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <p>Alexander Pierce - Web Developer<small>Member since Nov. 2012</small></p>
+            </li>
+
+            <li class="user-footer">
+              <div class="pull-left">
+                <% # TODO: link_to edit_user_path(current_user) %>
+                <%= link_to t('application.menu.profile'), '', class: 'btn btn-default btn-flat' %>
+              </div>
+              <div class="pull-right">
+                <%= link_to t('application.sign_out'), destroy_user_session_path, class: 'btn btn-default btn-flat', method: :delete %>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <!-- END USER MENU -->
+      </ul>
+    </div>
+    <!-- END NAVBAR MENU -->
+  </nav>
+  <!-- END NAVBAR -->
+</header>
+<!-- END HEADER -->

@@ -1,0 +1,13 @@
+<!-- BEGIN MENU -->
+<ul class="sidebar-menu">
+  <li class="header"><%= t('application.menu.title').upcase %></li>
+
+  <li class="<%= current_active_menu root_path %>">
+    <a href="#"><i class='fa fa-home'></i> <span><%= t('application.menu.home') %></span></a>
+  </li>
+
+  <li>
+    <a href="#"><i class='fa fa-user'></i> <span><%= t('application.menu.profile') %></span></a>
+  </li>
+</ul>
+<!-- END MENU -->
