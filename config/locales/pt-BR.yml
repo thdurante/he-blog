@@ -223,7 +223,13 @@ pt-BR:
   application:
     app_name: HeBlog
     sign_out: Logout
-    sign_in: Login
+    sign_up: Registrar
+    forgot_password: 'Esqueceu sua senha?'
+    resend_confirmation: 'Não recebeu as instruções de confirmação?'
+    resend_unlock: 'Não recebeu as intruções de desbloqueio?'
+    sign_in:
+      text: Login
+      message: Faça login para iniciar a sessão
     toggle_navigation: Abre/Fecha Navegação
     menu:
       title: Menu

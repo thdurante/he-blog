@@ -1,0 +1,13 @@
+<% flash.each do |key, value| %>
+  <div class="callout callout-<%= key %>">
+    <% if value.kind_of?(Array) %>
+      <ul style="margin-left: 5px; padding-left: 10px;">
+        <% value.each do |entry| %>
+          <li><%= entry %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <%= value %>
+    <% end %>
+  </div>
+<% end %>
