@@ -35,9 +35,9 @@ RSpec.describe UsersController, type: :controller do
     context 'with valid params' do
       let(:new_attributes) do
         {
-            name: 'New name',
-            password: 'password12345',
-            password_confirmation: 'password12345'
+          name:                  'New name',
+          password:              'password12345',
+          password_confirmation: 'password12345',
         }
       end
 
