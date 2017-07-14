@@ -5,5 +5,9 @@ Rails.application.routes.draw do
       passwords: 'users/passwords'
   }
 
-  root 'users/registrations#new'
+  namespace :blog do
+    resources :users, only: [:show]
+  end
+
+  root to: 'blog/users#show'
 end
