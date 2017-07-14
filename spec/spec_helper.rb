@@ -1,5 +1,12 @@
 require 'simplecov'
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter 'app/assets/'
+  add_filter 'app/jobs/'
+  add_filter 'app/mailers/'
+  add_filter 'app/channels/'
+  add_filter 'vendor/'
+  add_filter 'lib/'
+end
 
 require 'codecov'
 SimpleCov.formatter = SimpleCov::Formatter::Codecov
