@@ -1,9 +1,9 @@
 <!-- BEGIN HEADER -->
 <header class="main-header">
-  <a href="/" class="logo">
+  <%= link_to root_path, class: 'logo' do %>
     <span class="logo-mini"><b>H</b>B</span>
     <span class="logo-lg">HE<b>Blog</b></span>
-  </a>
+  <% end %>
 
   <!-- BEGIN NAVBAR -->
   <nav class="navbar navbar-static-top" role="navigation">
@@ -30,8 +30,7 @@
 
             <li class="user-footer">
               <div class="pull-left">
-                <% # TODO: link_to edit_user_path(current_user) %>
-                <%= link_to t('application.menu.profile'), '', class: 'btn btn-default btn-flat' %>
+                <%= link_to t('application.menu.profile'), edit_user_path(current_user), class: 'btn btn-default btn-flat' %>
               </div>
               <div class="pull-right">
                 <%= link_to t('application.sign_out'), destroy_user_session_path, class: 'btn btn-default btn-flat', method: :delete %>

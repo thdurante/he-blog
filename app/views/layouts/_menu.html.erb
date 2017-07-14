@@ -3,11 +3,15 @@
   <li class="header"><%= t('application.menu.title').upcase %></li>
 
   <li class="<%= current_active_menu root_path %>">
-    <a href="#"><i class='fa fa-home'></i> <span><%= t('application.menu.home') %></span></a>
+    <%= link_to root_path do %>
+      <i class='fa fa-home'></i> <span><%= t('application.menu.home') %></span>
+    <% end %>
   </li>
 
-  <li>
-    <a href="#"><i class='fa fa-user'></i> <span><%= t('application.menu.profile') %></span></a>
+  <li class="<%= current_active_menu edit_user_path(current_user) %>">
+    <%= link_to edit_user_path(current_user) do %>
+      <i class='fa fa-user'></i> <span><%= t('application.menu.profile') %></span>
+    <% end %>
   </li>
 </ul>
 <!-- END MENU -->
