@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       passwords: 'users/passwords'
   }
 
+  resources :users, only: [:edit, :update, :destroy]
+
   namespace :blog do
     resources :users, only: [:show]
   end

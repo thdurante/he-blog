@@ -260,3 +260,15 @@ pt-BR:
     error_messages:
       pre: O formulário contém
       error: erro
+    views:
+      users:
+        heading: Perfil
+        subheading: Edição
+        member_since: 'Membro desde:'
+      actions:
+        save: Salvar
+        back: Voltar
+    messages:
+      users:
+        successfully_updated: Usuário atualizado com sucesso
+        successfully_deleted: Usuário removido com sucesso

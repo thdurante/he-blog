@@ -1,0 +1,81 @@
+<% content_for :heading, t('application.views.users.heading') %>
+<% content_for :subheading, t('application.views.users.subheading') %>
+
+<% content_for :breadcrumb do %>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to "<i class=\"fa fa-home\"></i> #{t('application.menu.home')}".html_safe, root_path %>
+    </li>
+    <li class="active"><%= t('application.menu.profile') %></li>
+  </ol>
+<% end %>
+
+<%= simple_form_for(@user) do |f| %>
+  <div class="row">
+
+    <!-- BEGIN PROFILE BOX -->
+    <div class="col-md-4">
+      <div class="box box-primary">
+        <div class="box-body box-profile">
+          <img class="profile-user-img img-responsive img-circle" src="/assets/user4-128x128.jpg" alt="User profile picture">
+          <h3 class="profile-username text-center"><%= current_user.email %></h3>
+          <p class="text-muted text-center">
+            <%= t('application.views.users.member_since') %>&nbsp;
+            <%= format_datetime(current_user.created_at) %>
+          </p>
+          <hr/>
+
+          <!-- BEGIN ACTIONS -->
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <%= link_to t('application.views.actions.back'), root_path, class: 'btn btn-default btn-block' %>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <%= f.button :submit, t('application.views.actions.save'), class: 'btn btn-primary btn-block' %>
+            </div>
+          </div>
+          <!-- END ACTIONS -->
+
+        </div>
+      </div>
+    </div>
+    <!-- END PROFILE BOX -->
+
+    <!-- BEGIN EDITABLE FIELDS -->
+    <div class="col-md-8">
+      <div class="box box-primary">
+        <div class="box-body">
+          <div class="row">
+            <div class="col-xs-12">
+              <%= render partial: 'shared/error_messages', locals: { object: @user } %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <%= f.label :name %>
+                <%= f.input_field :name, class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <%= f.label :password %>
+              <%= f.input_field :password, placeholder: t('activerecord.attributes.user.password'), class: 'form-control' %>
+            </div>
+            <div class="col-xs-6">
+              <%= f.label :password_confirmation %>
+              <%= f.input_field :password_confirmation, placeholder: t('activerecord.attributes.user.password_confirmation'), class: 'form-control' %>
+            </div>
+          </div>
+
+          <br/>
+        </div>
+      </div>
+    </div>
+    <!-- END EDITABLE FIELDS -->
+
+  </div>
+<% end %>
