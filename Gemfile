@@ -17,6 +17,9 @@ gem 'jquery-ui-rails'
 gem 'figaro'
 gem 'devise'
 gem 'simple_form'
+gem 'paperclip', '~> 5.0.0'
+gem 'paperclip-i18n'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
