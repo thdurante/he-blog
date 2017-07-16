@@ -5,10 +5,10 @@
     <!-- BEGIN USER PANEL -->
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="<%= image_url(current_user.avatar.url(:sidebar)) %>" class="img-circle" alt="User Image" />
+        <img src="<%= image_url(current_user.avatar.url(:thumb)) %>" class="img-circle" alt="User Image" />
       </div>
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p><%= current_user.name %></p>
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>

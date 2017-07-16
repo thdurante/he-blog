@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_attached_file :avatar,
-                    styles: { sidebar: '160x160#', header: '25x25#' },
+                    styles: { thumb: '160x160#' },
                     default_url: ActionController::Base.helpers.image_url('default-avatar.jpg')
 
   validates :name, presence: true

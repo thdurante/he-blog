@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :name,
+      :avatar,
       :_destroy
     )
   end
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
       :name,
       :password,
       :password_confirmation,
+      :avatar,
       :_destroy
     )
   end
