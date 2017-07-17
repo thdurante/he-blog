@@ -23,4 +23,5 @@ In the project's root directory:
 ```
 $ git push heroku master
 $ heroku run rake db:migrate
+$ figaro heroku:set -e production
 ```
