@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Blog::UsersController, type: :controller do
+  let(:user) { create(:user) }
+
+  before(:each) { sign_in user }
+
   describe 'GET #show' do
     it 'returns http success' do
       get :show

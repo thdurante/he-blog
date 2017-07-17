@@ -16,8 +16,8 @@ RSpec.describe User, type: :model do
   it { should have_attached_file(:avatar) }
 
   it do
-    should validate_attachment_content_type(:avatar).
-      allowing('image/png', 'image/gif').
-      rejecting('text/plain', 'text/xml')
+    should validate_attachment_content_type(:avatar)
+      .allowing('image/png', 'image/gif')
+      .rejecting('text/plain', 'text/xml')
   end
 end

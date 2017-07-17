@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe ApplicationHelper, type: :helper do
-
   describe '#current_active_menu' do
     it 'returns \'active\' when current_page matches' do
       allow(helper).to receive(:current_active_menu).and_return('active')

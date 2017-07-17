@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: [:edit, :update, :destroy]
+  resources :posts, only: [:create, :destroy]
 
   namespace :blog do
     resources :users, only: [:show]

@@ -20,6 +20,8 @@ gem 'simple_form'
 gem 'paperclip', '~> 5.0.0'
 gem 'paperclip-i18n'
 gem 'aws-sdk'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-foundation'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'

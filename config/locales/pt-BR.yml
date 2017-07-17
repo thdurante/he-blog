@@ -20,7 +20,9 @@ pt-BR:
         password: Senha
         confirm_password: Confirme a senha
         password_confirmation: Confirmação de senha
-
+      post:
+        content: Conteúdo
+        user_id: Usuário
 
   date:
     abbr_day_names:
@@ -255,6 +257,7 @@ pt-BR:
       profile: Perfil
       home: Início
       search: Pesquisar
+      blog: Blog
     footer:
       text: Processo seletivo HE:labs
       developed_by: Desenvolvido por
@@ -266,10 +269,29 @@ pt-BR:
         heading: Perfil
         subheading: Edição
         member_since: 'Membro desde:'
+      blog:
+        title: Blog
+        subheading: Blog
+        followers: Seguidores
+        following: Seguindo
+        posts: Posts
+        recent_activity: Atividade Recente
+        shared_at: Compartilhado há
+        no_posts: Ainda não existem posts para o usuário
+        post_placeholder: 'Escreva algo para o mundo...'
       actions:
         save: Salvar
         back: Voltar
+        post: Postar
     messages:
       users:
         successfully_updated: Usuário atualizado com sucesso
         successfully_deleted: Usuário removido com sucesso
+      posts:
+        successfully_created: Post criado com sucesso
+        successfully_deleted: Post removido com sucesso
+        confirm_destroy: 'Tem certeza que deseja remover o post?'
+
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Próxima &#8594;"
