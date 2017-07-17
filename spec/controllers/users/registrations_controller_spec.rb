@@ -5,6 +5,7 @@ RSpec.describe Users::RegistrationsController, type: :controller do
     {
       name:                  Faker::Name.name,
       email:                 Faker::Internet.email,
+      username:              Faker::Internet.user_name,
       password:              'secret12345',
       password_confirmation: 'secret12345',
     }
@@ -14,6 +15,7 @@ RSpec.describe Users::RegistrationsController, type: :controller do
     {
       name:                  nil,
       email:                 nil,
+      username:              nil,
       password:              'something',
       password_confirmation: 'something else',
     }

@@ -16,6 +16,7 @@ pt-BR:
       user:
         name: Nome
         email: E-mail
+        username: Usuário
         password: Senha
         confirm_password: Confirme a senha
         password_confirmation: Confirmação de senha
