@@ -43,6 +43,8 @@ group :test do
   gem 'simplecov', require: false
   gem 'codecov', require: false
   gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'poltergeist'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
