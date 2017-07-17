@@ -16,6 +16,11 @@
   </div>
 
   <div class="form-group has-feedback">
+    <%= f.input_field :username, placeholder: t('activerecord.attributes.user.username'), class: 'form-control', autocomplete: 'off', required: true %>
+    <span class="fa fa-at form-control-feedback"></span>
+  </div>
+
+  <div class="form-group has-feedback">
     <%= f.input_field :password, placeholder: t('activerecord.attributes.user.password'), class: 'form-control', autocomplete: 'off', required: true %>
     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
   </div>
