@@ -20,9 +20,13 @@
 <body class="skin-blue sidebar-mini sidebar-collapse">
   <div class="wrapper" style="height: auto; min-height: 100%;">
 
-    <%= render partial: 'layouts/header' %>
-
-    <%= render partial: 'layouts/sidebar' %>
+    <% if current_user %>
+      <%= render partial: 'layouts/header' %>
+      <%= render partial: 'layouts/sidebar' %>
+    <% else %>
+      <%= render partial: 'layouts/guest/header' %>
+      <%= render partial: 'layouts/guest/sidebar' %>
+    <% end %>
 
     <!-- BEGIN CONTENT WRAPPER -->
     <div class="content-wrapper">

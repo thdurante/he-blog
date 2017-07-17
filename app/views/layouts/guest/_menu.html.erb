@@ -1,0 +1,17 @@
+<!-- BEGIN MENU -->
+<ul class="sidebar-menu">
+  <li class="header"><%= t('application.menu.title').upcase %></li>
+
+  <li class="<%= current_active_menu root_path %>">
+    <%= link_to root_path do %>
+      <i class='fa fa-home'></i> <span><%= t('application.menu.home') %></span>
+    <% end %>
+  </li>
+
+  <li class="<%= current_active_menu new_user_registration_path %>">
+    <%= link_to new_user_registration_path do %>
+      <i class='fa fa-pencil-square-o'></i> <span><%= t('application.menu.sign_up') %></span>
+    <% end %>
+  </li>
+</ul>
+<!-- END MENU -->
