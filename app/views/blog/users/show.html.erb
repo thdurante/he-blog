@@ -1,2 +1,64 @@
-<h1>Blog::Users#show</h1>
-<p>Find me in app/views/blog/users/show.html.erb</p>
+<% content_for :title, t('application.views.blog.title') %>
+<% content_for :heading, "@#{@user.username}" %>
+<% content_for :subheading, t('application.views.blog.subheading') %>
+
+<% content_for :breadcrumb do %>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to root_path do %>
+        <i class="fa fa-home"></i> <%= t('application.menu.home') %>
+      <% end %>
+    </li>
+    <li class="active"><%= t('application.menu.blog') %></li>
+  </ol>
+<% end %>
+
+<div class="row">
+
+  <!-- BEGIN PROFILE BOX -->
+  <div class="col-md-3">
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <img class="profile-user-img img-responsive img-circle" src="<%= image_url(@user.avatar.url(:thumb)) %>" alt="User profile picture">
+        <h3 class="profile-username text-center"><%= @user.name %></h3>
+        <p class="text-muted text-center">@<%= @user.username %></p>
+
+        <!-- BEGIN INFO -->
+        <ul class="list-group list-group-unbordered">
+          <li class="list-group-item">
+            <b><%= t('application.views.blog.followers') %></b> <a class="pull-right">1,322</a>
+          </li>
+          <li class="list-group-item">
+            <b><%= t('application.views.blog.following') %></b> <a class="pull-right">543</a>
+          </li>
+          <li class="list-group-item">
+            <b><%= t('application.views.blog.posts') %></b> <a class="pull-right"><%= @user.posts.count %></a>
+          </li>
+        </ul>
+        <!-- END INFO -->
+
+      </div>
+    </div>
+  </div>
+  <!-- END PROFILE BOX -->
+
+  <!-- BEGIN TABS -->
+  <div class="col-md-9">
+
+    <%= render partial: 'shared/flash_messages' %>
+
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#posts" data-toggle="tab"><%= t('application.views.blog.posts') %></a></li>
+        <li><a href="#recent_activity" data-toggle="tab"><%= t('application.views.blog.recent_activity') %></a></li>
+      </ul>
+
+      <div class="tab-content">
+        <%= render partial: 'blog/users/posts' %>
+        <%= render partial: 'blog/users/recent_activity' %>
+      </div>
+    </div>
+  </div>
+  <!-- END TABS -->
+
+</div>

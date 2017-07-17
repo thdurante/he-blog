@@ -1,0 +1,48 @@
+<!-- BEGIN TAB POSTS -->
+<div class="active tab-pane" id="posts">
+
+  <%= render partial: 'blog/users/post_form' %><br/>
+
+  <% if @posts.count == 0 %>
+    <div class="post text-center">
+      <p>
+        <%= t('application.views.blog.no_posts') %>
+        @<%= @user.username %>
+      </p>
+    </div>
+  <% end %>
+
+  <% @posts.each_with_index do |post, index| %>
+
+    <!-- BEGIN POST -->
+    <div class="post">
+
+      <!-- BEGIN USER BLOCK -->
+      <div class="user-block">
+        <img class="img-circle img-bordered-sm" src="<%= image_url(@user.avatar.url(:thumb)) %>" alt="user image">
+        <span class="username">
+          <a href="#"><%= @user.name %> - <small>@<%= @user.username %></small></a>
+
+          <!-- TODO: Link to destroy post -->
+          <%= link_to post_path(post), method: :delete, data: { confirm: t('application.messages.posts.confirm_destroy') }, class: 'pull-right btn-box-tool' do %>
+            <i class="fa fa-times"></i>
+          <% end %>
+        </span>
+        <span class="description">
+          <%= t('application.views.blog.shared_at') %>
+          <%= distance_of_time_in_words(post.created_at, Time.now) %>
+        </span>
+      </div>
+      <!-- END USER BLOCK -->
+
+      <p><%= post.content %></p>
+
+    </div>
+    <!-- END POST -->
+
+  <% end %>
+
+  <%= will_paginate @posts, renderer: FoundationPagination::Rails, class: 'pagination-sm no-margin' %>
+
+</div>
+<!-- END TAB POSTS -->

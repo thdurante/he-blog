@@ -1,0 +1,15 @@
+<%= simple_form_for @post, method: :post do |f| %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <%= f.input_field :user_id, type: :hidden, value: @user.id %>
+        <%= f.input_field :content, placeholder: t('application.views.blog.post_placeholder'), type: :text, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= f.button :submit, t('application.views.actions.post'), class: 'btn btn-primary btn-block' %>
+    </div>
+  </div>
+<% end %>
