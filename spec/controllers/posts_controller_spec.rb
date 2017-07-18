@@ -5,15 +5,15 @@ RSpec.describe PostsController, type: :controller do
 
   let(:valid_attributes) do
     {
-        user_id: user.to_param,
-        content: Faker::Lorem.paragraph
+      user_id: user.to_param,
+      content: Faker::Lorem.paragraph,
     }
   end
 
   let(:invalid_attributes) do
     {
-        user_id: nil,
-        content: ''
+      user_id: nil,
+      content: '',
     }
   end
 

@@ -6,10 +6,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update, :destroy]
   resources :posts, only: [:create, :destroy]
+  get 'static_pages/index'
 
   namespace :blog do
     resources :users, only: [:show]
   end
 
-  root to: 'blog/users#show'
+  root to: 'static_pages#index'
 end

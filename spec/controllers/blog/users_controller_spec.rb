@@ -7,7 +7,7 @@ RSpec.describe Blog::UsersController, type: :controller do
 
   describe 'GET #show' do
     it 'returns http success' do
-      get :show
+      get :show, params: { id: user.to_param }
       expect(response).to have_http_status(:success)
     end
   end

@@ -280,6 +280,11 @@ pt-BR:
         shared_at: Compartilhado há
         no_posts: Ainda não existem posts para o usuário
         post_placeholder: 'Escreva algo para o mundo...'
+      static_pages:
+        title: Início
+        heading: Início
+        no_users: Ainda não existem usuários cadastrados no HeBlog
+        view_profile: Visualizar Perfil
       actions:
         save: Salvar
         back: Voltar

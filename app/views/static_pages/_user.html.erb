@@ -1,0 +1,51 @@
+<!-- BEGIN USER -->
+<div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="box box-primary box-widget widget-user">
+
+    <!-- BEGIN HEADER -->
+    <div class="widget-user-header bg-blue" style="background: url('/triangle-background.jpg') 55% 80%;">
+      <h3 class="widget-user-username"><%= user.name %></h3>
+      <h5 class="widget-user-desc"><strong>@<%= user.username %></strong></h5>
+    </div>
+    <!-- END HEADER -->
+
+    <div class="widget-user-image">
+      <img class="img-circle" src="<%= image_url(user.avatar.url(:thumb)) %>" alt="User Avatar" style="background-color: #f6f6f6;">
+    </div>
+
+    <!-- BEGIN INFO -->
+    <div class="box-footer">
+      <div class="row">
+        <div class="col-sm-4 border-right">
+          <div class="description-block">
+            <h5 class="description-header">3,200</h5>
+            <span class="description-text"><%= t('application.views.blog.followers').upcase %></span>
+          </div>
+        </div>
+        <div class="col-sm-4 border-right">
+          <div class="description-block">
+            <h5 class="description-header">13,000</h5>
+            <span class="description-text"><%= t('application.views.blog.following').upcase %></span>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="description-block">
+            <h5 class="description-header"><%= user.posts.count %></h5>
+            <span class="description-text"><%= t('application.views.blog.posts').upcase %></span>
+          </div>
+        </div>
+      </div>
+
+      <br/>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <%= link_to t('application.views.static_pages.view_profile'), blog_user_path(user) , class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    </div>
+    <!-- END INFO -->
+
+  </div>
+</div>
+<!-- END USER -->

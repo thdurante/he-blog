@@ -1,0 +1,45 @@
+<% content_for :title, t('application.views.static_pages.title') %>
+<% content_for :heading, t('application.views.static_pages.heading') %>
+<% content_for :subheading, t('application.app_name') %>
+
+<% content_for :breadcrumb do %>
+  <ol class="breadcrumb">
+    <li class="active">
+      <%= link_to root_path do %>
+        <i class="fa fa-home"></i> <%= t('application.menu.home') %>
+      <% end %>
+    </li>
+  </ol>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-12">
+    <%= render partial: 'shared/flash_messages' %>
+  </div>
+</div>
+
+<!-- BEGIN USERS -->
+<div class="row">
+
+  <% if @users.count == 0 %>
+    <div class="col-xs-12">
+      <div class="post text-center">
+        <p>
+          <%= t('application.views.static_pages.no_users') %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+
+  <% @users.each do |user| %>
+    <%= render partial: 'static_pages/user', locals: { user: user } %>
+  <% end %>
+
+</div>
+<!-- END USERS -->
+
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <%= will_paginate @users, renderer: FoundationPagination::Rails, class: 'pagination-sm no-margin' %>
+  </div>
+</div>

@@ -11,7 +11,7 @@ module Blog
     private
 
     def set_user
-      @user = params[:id] ? User.find(params[:id]) : current_user
+      @user = User.find(params[:id])
     end
   end
 end
