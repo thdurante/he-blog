@@ -15,5 +15,5 @@ FactoryGirl.create :user, :with_posts, number_of_posts: rand(3..10),
 
 # Random users
 8.times do
-  FactoryGirl.create :user, :with_posts, number_of_posts: rand(3..10)
+  FactoryGirl.create :user, :with_avatar, :with_posts, number_of_posts: rand(3..10)
 end

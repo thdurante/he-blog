@@ -4,7 +4,10 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     username { Faker::Internet.user_name }
     password { Faker::Internet.password }
-    avatar { Faker::Avatar.image }
+
+    trait :with_avatar do
+      avatar { Faker::Avatar.image }
+    end
 
     trait :with_posts do
       transient do
