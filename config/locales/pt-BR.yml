@@ -254,11 +254,12 @@ pt-BR:
     toggle_navigation: Abre/Fecha Navegação
     menu:
       title: Menu
-      profile: Perfil
+      profile: Meu Perfil
       home: Início
       search: Pesquisar
       blog: Blog
       sign_up: Registrar
+      my_feed: Meu Feed
     footer:
       text: Processo seletivo HE:labs
       developed_by: Desenvolvido por

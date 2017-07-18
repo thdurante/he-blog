@@ -8,6 +8,12 @@
     <% end %>
   </li>
 
+  <li class="<%= current_active_menu blog_user_path(current_user) %>">
+    <%= link_to blog_user_path(current_user) do %>
+      <i class='fa fa-rss'></i> <span><%= t('application.menu.my_feed') %></span>
+    <% end %>
+  </li>
+
   <li class="<%= current_active_menu edit_user_path(current_user) %>">
     <%= link_to edit_user_path(current_user) do %>
       <i class='fa fa-user'></i> <span><%= t('application.menu.profile') %></span>

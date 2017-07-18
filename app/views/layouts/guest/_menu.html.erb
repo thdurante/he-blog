@@ -8,6 +8,12 @@
     <% end %>
   </li>
 
+  <li class="<%= current_active_menu new_user_session_path %>">
+    <%= link_to new_user_session_path do %>
+        <i class='fa fa-sign-in'></i> <span><%= t('application.sign_in.text') %></span>
+    <% end %>
+  </li>
+
   <li class="<%= current_active_menu new_user_registration_path %>">
     <%= link_to new_user_registration_path do %>
       <i class='fa fa-pencil-square-o'></i> <span><%= t('application.menu.sign_up') %></span>
