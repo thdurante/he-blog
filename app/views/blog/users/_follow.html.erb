@@ -1,4 +1,7 @@
 <%= simple_form_for current_user.active_relationships.build do |f| %>
   <%= f.input_field :followed_id, type: :hidden, value: @user.id %>
-  <%= f.button :submit, t('application.views.actions.follow'), class: 'btn btn-primary btn-block' %>
+  <%= button_tag type: :submit, class: 'btn btn-primary btn-block' do %>
+    <i class='fa fa-heart'></i>&nbsp;&nbsp;
+    <%= t('application.views.actions.follow') %>
+  <% end %>
 <% end %>
