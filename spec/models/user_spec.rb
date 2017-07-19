@@ -27,39 +27,39 @@ RSpec.describe User, type: :model do
 
   it do
     should have_many(:active_relationships)
-               .class_name('Relationship')
-               .with_foreign_key(:follower_id)
-               .dependent(:destroy)
+      .class_name('Relationship')
+      .with_foreign_key(:follower_id)
+      .dependent(:destroy)
   end
 
   it do
     should have_many(:passive_relationships)
-               .class_name('Relationship')
-               .with_foreign_key(:followed_id)
-               .dependent(:destroy)
+      .class_name('Relationship')
+      .with_foreign_key(:followed_id)
+      .dependent(:destroy)
   end
 
   it do
     should have_many(:following)
-               .through(:active_relationships)
-               .source(:followed)
+      .through(:active_relationships)
+      .source(:followed)
   end
 
   it do
     should have_many(:followers)
-               .through(:passive_relationships)
-               .source(:follower)
+      .through(:passive_relationships)
+      .source(:follower)
   end
 
   describe '#follow' do
     describe 'user1 follows user2' do
-      it 'should increment the \'followings\' of user1 by 1' do
+      it 'increments the \'followings\' of user1 by 1' do
         expect {
           user1.follow(user2)
         }.to change(user1.following, :count).by(1)
       end
 
-      it 'should increment the \'followers\' of user2 by 1' do
+      it 'increments the \'followers\' of user2 by 1' do
         expect {
           user1.follow(user2)
         }.to change(user2.followers, :count).by(1)
@@ -71,13 +71,13 @@ RSpec.describe User, type: :model do
     describe 'user1 unfollows user2' do
       before(:each) { user1.follow(user2) }
 
-      it 'should decrement the \'followings\' of user1 by -1' do
+      it 'decrements the \'followings\' of user1 by -1' do
         expect {
           user1.unfollow(user2)
         }.to change(user1.following, :count).by(-1)
       end
 
-      it 'should decrement the \'followers\' of user2 by -1' do
+      it 'decrements the \'followers\' of user2 by -1' do
         expect {
           user1.unfollow(user2)
         }.to change(user2.followers, :count).by(-1)
