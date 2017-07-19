@@ -1,0 +1,29 @@
+<div class="col-lg-12">
+  <div class="box box-primary">
+
+    <!-- BEGIN MESSAGE -->
+    <div class="box-content text-center">
+      <br/><div><%= message.html_safe %></div><br/>
+    </div>
+    <!-- END MESSAGE -->
+
+    <!-- BEGIN NAVIGATION -->
+    <div class="box-footer text-center">
+      <div class="row">
+        <div class="col-xs-3 col-xs-offset-3">
+          <%= link_to blog_user_path(user), class: 'btn btn-primary btn-block' do %>
+            <i class="fa fa-at"></i> <%= user.username %>
+          <% end %>
+        </div>
+
+        <div class="col-xs-3">
+          <%= link_to root_path, class: 'btn btn-default btn-block' do %>
+            <i class="fa fa-home"></i> <%= t('application.menu.home') %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- END NAVIGATION -->
+
+  </div>
+</div>

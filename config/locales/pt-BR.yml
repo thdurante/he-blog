@@ -271,6 +271,12 @@ pt-BR:
         heading: Perfil
         subheading: Edição
         member_since: 'Membro desde:'
+        following:
+          title: Seguindo
+          subheading: Seguindo
+        followers:
+          title: Seguidores
+          subheading: Seguidores
       blog:
         title: Blog
         subheading: Blog
@@ -296,6 +302,10 @@ pt-BR:
       users:
         successfully_updated: Usuário atualizado com sucesso
         successfully_deleted: Usuário removido com sucesso
+        relationships:
+          pre_message: O usuário
+          post_message_following: não segue nenhum outro usuário
+          post_message_followers: não possui seguidores
       posts:
         successfully_created: Post criado com sucesso
         successfully_deleted: Post removido com sucesso

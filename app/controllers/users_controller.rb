@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:following, :followers]
   before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user_by_param_id, only: [:following, :followers]
 
   def edit
   end
@@ -21,10 +23,22 @@ class UsersController < ApplicationController
     redirect_to new_user_registration_path
   end
 
+  def following
+    @following = @user.following.paginate(page: params[:page], per_page: 6)
+  end
+
+  def followers
+    @followers = @user.followers.paginate(page: params[:page], per_page: 6)
+  end
+
   private
 
   def set_user
     @user = current_user
+  end
+
+  def set_user_by_param_id
+    @user = User.find(params[:id])
   end
 
   def user_params

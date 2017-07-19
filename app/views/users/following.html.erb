@@ -1,0 +1,35 @@
+<% content_for :title, t('application.views.users.following.title') %>
+<% content_for :heading, "@#{@user.username}" %>
+<% content_for :subheading, t('application.views.users.following.subheading') %>
+
+<% content_for :breadcrumb do %>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to root_path do %>
+        <i class="fa fa-home"></i> <%= t('application.menu.home') %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to blog_user_path(@user) do %>
+        <i class="fa fa-user"></i> @<%= @user.username %>
+      <% end %>
+    </li>
+    <li class="active"><%= t('application.views.users.following.subheading') %></li>
+  </ol>
+<% end %>
+
+<div class="row">
+  <% if @following.count == 0 %>
+    <%= render partial: 'users/no_records', locals: { message: "#{t('application.messages.users.relationships.pre_message')} <b>@#{@user.username}</b> #{t('application.messages.users.relationships.post_message_following')}", user: @user } %>
+  <% end %>
+
+  <% @following.each do |user| %>
+    <%= render partial: 'static_pages/user', locals: { user: user } %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <%= will_paginate @following, renderer: FoundationPagination::Rails, class: 'pagination-sm no-margin' %>
+  </div>
+</div>
