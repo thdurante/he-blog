@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-4 border-right">
+    <div class="description-block">
+      <%= link_to followers_user_path(user), style: 'color: black' do %>
+        <h5 class="description-header"><b><%= user.followers.count %></b></h5>
+        <span class="description-text"><%= t('application.views.blog.followers').upcase %></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-4 border-right">
+    <div class="description-block">
+      <%= link_to following_user_path(user), style: 'color: black' do %>
+        <h5 class="description-header"><b><%= user.following.count %></b></h5>
+        <span class="description-text"><%= t('application.views.blog.following').upcase %></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="description-block">
+      <%= link_to blog_user_path(user), style: 'color: black' do %>
+        <h5 class="description-header"><b><%= user.posts.count %></b></h5>
+        <span class="description-text"><%= t('application.views.blog.posts').upcase %></span>
+      <% end %>
+    </div>
+  </div>
+</div>

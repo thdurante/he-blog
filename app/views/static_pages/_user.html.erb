@@ -15,28 +15,8 @@
 
     <!-- BEGIN INFO -->
     <div class="box-footer">
-      <div class="row">
-        <div class="col-sm-4 border-right">
-          <div class="description-block">
-            <h5 class="description-header">3,200</h5>
-            <span class="description-text"><%= t('application.views.blog.followers').upcase %></span>
-          </div>
-        </div>
-        <div class="col-sm-4 border-right">
-          <div class="description-block">
-            <h5 class="description-header">13,000</h5>
-            <span class="description-text"><%= t('application.views.blog.following').upcase %></span>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="description-block">
-            <h5 class="description-header"><%= user.posts.count %></h5>
-            <span class="description-text"><%= t('application.views.blog.posts').upcase %></span>
-          </div>
-        </div>
-      </div>
 
-      <br/>
+      <%= render partial: 'static_pages/stats', locals: { user: user } %><br/>
 
       <div class="row">
         <div class="col-xs-12">
