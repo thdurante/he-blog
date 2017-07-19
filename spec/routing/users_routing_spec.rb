@@ -14,8 +14,16 @@ RSpec.describe UsersController, type: :routing do
       expect(patch: '/users/1').to route_to('users#update', id: '1')
     end
 
-    it 'routes to #destroy' do
+    it 'routes to #destroy via DELETE' do
       expect(delete: '/users/1').to route_to('users#destroy', id: '1')
+    end
+
+    it 'routes to #following' do
+      expect(get: '/users/1/following').to route_to('users#following', id: '1')
+    end
+
+    it 'routes to #followers' do
+      expect(get: '/users/1/followers').to route_to('users#followers', id: '1')
     end
   end
 end
