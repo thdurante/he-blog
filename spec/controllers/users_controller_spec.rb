@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   let(:user) { create(:user) }
 
+  let(:other_user) { create(:user) }
+
   before do |example|
     sign_in user unless example.metadata[:skip_before_hook]
   end
@@ -85,6 +87,54 @@ RSpec.describe UsersController, type: :controller do
     it 'redirects to user_sign_up_path' do
       delete :destroy, params: { id: user.to_param }
       expect(response).to redirect_to new_user_registration_path
+    end
+  end
+
+  describe 'GET #following' do
+    before(:each) do
+      user.follow(other_user)
+      get :following, params: { id: user.to_param }
+    end
+
+    it 'renders \'following\' template' do
+      expect(subject).to render_template(:following)
+    end
+
+    it 'renders the \'application\' layout' do
+      expect(subject).to render_template(layout: 'application')
+    end
+
+    it 'assigns user as @user' do
+      expect(assigns(:user)).to eq(user)
+    end
+
+    it 'assigns following as @following' do
+      expect(assigns(:following)).to eq([other_user])
+    end
+  end
+
+  describe 'GET #followers' do
+    before(:each) do
+      sign_out user
+      sign_in other_user
+      other_user.follow(user)
+      get :followers, params: { id: user.to_param }
+    end
+
+    it 'renders \'followers\' template' do
+      expect(subject).to render_template(:followers)
+    end
+
+    it 'renders the \'application\' layout' do
+      expect(subject).to render_template(layout: 'application')
+    end
+
+    it 'assigns user as @user' do
+      expect(assigns(:user)).to eq(user)
+    end
+
+    it 'assigns following as @following' do
+      expect(assigns(:followers)).to eq([other_user])
     end
   end
 end
