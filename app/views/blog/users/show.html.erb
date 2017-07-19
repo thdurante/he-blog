@@ -23,20 +23,8 @@
         <h3 class="profile-username text-center"><%= @user.name %></h3>
         <p class="text-muted text-center">@<%= @user.username %></p>
 
-        <!-- BEGIN INFO -->
-        <ul class="list-group list-group-unbordered">
-          <li class="list-group-item">
-            <b><%= t('application.views.blog.followers') %></b> <a class="pull-right">1,322</a>
-          </li>
-          <li class="list-group-item">
-            <b><%= t('application.views.blog.following') %></b> <a class="pull-right">543</a>
-          </li>
-          <li class="list-group-item">
-            <b><%= t('application.views.blog.posts') %></b> <a class="pull-right"><%= @user.posts.count %></a>
-          </li>
-        </ul>
-        <!-- END INFO -->
-
+        <%= render partial: 'blog/users/stats' %>
+        <%= render partial: 'blog/users/relationship_form' if current_user %>
       </div>
     </div>
   </div>

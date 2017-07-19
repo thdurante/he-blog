@@ -1,0 +1,19 @@
+<!-- BEGIN INFO -->
+<ul class="list-group list-group-unbordered">
+  <li class="list-group-item">
+    <b><%= t('application.views.blog.followers') %></b>
+    <%= link_to followers_user_path(@user), class: 'pull-right' do %>
+      <%= @user.followers.count %>
+    <% end %>
+  </li>
+  <li class="list-group-item">
+    <b><%= t('application.views.blog.following') %></b>
+    <%= link_to following_user_path(@user), class: 'pull-right' do %>
+      <%= @user.following.count %>
+    <% end %>
+  </li>
+  <li class="list-group-item">
+    <b><%= t('application.views.blog.posts') %></b> <a class="pull-right"><%= @user.posts.count %></a>
+  </li>
+</ul>
+<!-- END INFO -->
