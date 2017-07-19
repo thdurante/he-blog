@@ -290,6 +290,8 @@ pt-BR:
         save: Salvar
         back: Voltar
         post: Postar
+        follow: Seguir
+        unfollow: Deixar de Seguir
     messages:
       users:
         successfully_updated: Usuário atualizado com sucesso
@@ -298,6 +300,9 @@ pt-BR:
         successfully_created: Post criado com sucesso
         successfully_deleted: Post removido com sucesso
         confirm_destroy: 'Tem certeza que deseja remover o post?'
+      relationships:
+        followed_successfully: Seguido com sucesso
+        unfollowed_successfully: Deixou de seguir com sucesso
 
   will_paginate:
     previous_label: "&#8592; Anterior"

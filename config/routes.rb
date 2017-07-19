@@ -4,8 +4,14 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
   }
 
-  resources :users, only: [:edit, :update, :destroy]
+  resources :users, only: [:edit, :update, :destroy] do
+    # TODO: test member routes and controller
+    member do
+      get :following, :followers
+    end
+  end
   resources :posts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   get 'static_pages/index'
 
   namespace :blog do
