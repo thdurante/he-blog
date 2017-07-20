@@ -306,6 +306,11 @@ pt-BR:
           pre_message: O usuário
           post_message_following: não segue nenhum outro usuário
           post_message_followers: não possui seguidores
+        notifications:
+          pre_message: Você tem
+          no_notifications: Você não tem nenhuma notificação
+          follow:
+            message: seguiu você
       posts:
         successfully_created: Post criado com sucesso
         successfully_deleted: Post removido com sucesso
