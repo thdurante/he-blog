@@ -9,4 +9,5 @@ test:
   <<: *default
 
 production:
-  <<: *default
+  adapter: redis
+  url: redis://redistogo:94b2e717b57f676e215e4c0ac0d84051@angelfish.redistogo.com:10851/
