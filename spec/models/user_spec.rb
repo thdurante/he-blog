@@ -51,6 +51,11 @@ RSpec.describe User, type: :model do
       .source(:follower)
   end
 
+  it do
+    should have_many(:notifications)
+      .with_foreign_key(:recipient_id)
+  end
+
   describe '#follow' do
     describe 'user1 follows user2' do
       it 'increments the \'followings\' of user1 by 1' do

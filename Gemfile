@@ -22,6 +22,7 @@ gem 'paperclip-i18n'
 gem 'aws-sdk'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-foundation'
+gem 'redis', '~> 3.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
