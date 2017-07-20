@@ -33,3 +33,9 @@
     <%= will_paginate @following, renderer: FoundationPagination::Rails, class: 'pagination-sm no-margin' %>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <%= render partial: 'users/navigation_links', locals: { user: @user } %>
+  </div>
+</div>
