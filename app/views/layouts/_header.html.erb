@@ -15,6 +15,23 @@
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
 
+        <!-- BEGIN NOTIFICATIONS -->
+        <li class="dropdown notifications-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-bell-o"></i>
+            <span class="label label-warning"><%= current_user.notifications.count %></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <% if current_user.notifications.any? %>
+              <%= render partial: 'layouts/notifications/notifications' %>
+            <% else %>
+              <%= render partial: 'layouts/notifications/no_notifications' %>
+            <% end %>
+          </ul>
+        </li>
+        <!-- END NOTIFICATIONS -->
+
         <!-- BEGIN USER MENU -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -45,6 +62,7 @@
           </ul>
         </li>
         <!-- END USER MENU -->
+
       </ul>
     </div>
     <!-- END NAVBAR MENU -->

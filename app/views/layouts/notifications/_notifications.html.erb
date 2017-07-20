@@ -1,0 +1,15 @@
+<li class="header">
+  <%= t('application.messages.users.notifications.pre_message') %>
+  <%= pluralize(current_user.notifications.count, 'notificação', 'notificações') %>
+</li>
+
+<!-- BEGIN NOTIFICATIONS LIST -->
+<li>
+  <ul class="menu" id="notifications">
+    <% current_user.notifications.each do |notification| %>
+      <%= render partial: "notifications/#{notification.notifiable_type.underscore.pluralize}/#{notification.action}",
+                 locals: {notification: notification} %>
+    <% end %>
+  </ul>
+</li>
+<!-- END NOTIFICATIONS LIST -->
