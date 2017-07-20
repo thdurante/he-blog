@@ -31,7 +31,7 @@
     </div>
   <% end %>
 
-  <% @users.each do |user| %>
+  <% @users.order(created_at: :asc).each do |user| %>
     <%= render partial: 'static_pages/user', locals: { user: user } %>
   <% end %>
 
