@@ -288,6 +288,7 @@ pt-BR:
         no_posts: Ainda não existem posts para o usuário
         post_placeholder: 'Escreva algo para o mundo...'
         click_for_details: 'Clique para detalhes →'
+        recent_activity: Atividade Recente
       static_pages:
         title: Início
         heading: Início

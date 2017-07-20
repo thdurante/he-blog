@@ -1,6 +1,19 @@
 <!-- BEGIN TAB ACTIVITY -->
 <div class="tab-pane" id="recent_activity">
-  <!-- TODO: Implemente recent activity -->
-  <p><%= t('application.views.blog.recent_activity') %></p>
+  <% if @recent_activity.count == 0 %>
+    <div class="post text-center">
+      <p>
+        <%= t('application.messages.users.relationships.pre_message') %>
+        <b>@<%= @user.username %></b>
+        <%= t('application.messages.users.relationships.post_message_following') %>
+      </p>
+    </div>
+  <% end %>
+
+  <% @recent_activity.each do |post| %>
+    <%= render partial: 'blog/users/post', locals: { post: post } %>
+  <% end %>
+
+  <%= will_paginate @recent_activity, param_name: 'recent_activity_page', renderer: FoundationPagination::Rails, class: 'pagination-sm no-margin' %>
 </div>
 <!-- END TAB ACTIVITY -->

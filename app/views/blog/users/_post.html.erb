@@ -1,0 +1,27 @@
+<!-- BEGIN POST -->
+<div class="post">
+
+  <!-- BEGIN USER BLOCK -->
+  <div class="user-block">
+    <img class="img-circle img-bordered-sm" src="<%= image_url(post.user.avatar.url(:thumb)) %>" alt="user image">
+    <span class="username">
+      <a href="#"><%= post.user.name %> - <small>@<%= post.user.username %></small></a>
+
+      <% if current_user && current_user == post.user %>
+        <%= link_to post_path(post), method: :delete, data: { confirm: t('application.messages.posts.confirm_destroy') }, class: 'pull-right btn-box-tool' do %>
+          <i class="fa fa-times"></i>
+        <% end %>
+      <% end %>
+
+    </span>
+    <span class="description">
+      <%= t('application.views.blog.shared_at') %>
+      <%= distance_of_time_in_words(post.created_at, Time.now) %>
+    </span>
+  </div>
+  <!-- END USER BLOCK -->
+
+  <p><%= post.content %></p>
+
+</div>
+<!-- END POST -->
