@@ -19,9 +19,21 @@ $ rails s
 ```
 
 ## Deploy
-In the project's root directory:
+First of all, to config action cable, read the [docs](https://blog.heroku.com/real_time_rails_implementing_websockets_in_rails_5_with_action_cable#deploying-our-application-to-heroku).
+Then, in the project's root directory:
 ```
 $ git push heroku master
+$ heroku pg:reset
 $ heroku run rake db:migrate
+$ heroku run rake db:seed
 $ figaro heroku:set -e production
+```
+After the steps above, go to [https://he-blog.herokuapp.com](https://he-blog.herokuapp.com).
+Default credentials:
+```
+Login: teste1@teste.com.br
+Password: teste12345
+
+Login: teste2@teste.com.br
+Password: teste12345
 ```
