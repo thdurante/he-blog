@@ -23,13 +23,13 @@ gem 'aws-sdk'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-foundation'
 gem 'redis', '~> 3.0'
+gem 'factory_girl_rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'pry'
   gem 'rubocop', require: false
   gem 'rubocop-rspec'
-  gem 'factory_girl_rails'
   gem 'faker'
 end
 
