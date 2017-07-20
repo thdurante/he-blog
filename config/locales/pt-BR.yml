@@ -311,6 +311,8 @@ pt-BR:
           no_notifications: Você não tem nenhuma notificação
           follow:
             message: seguiu você
+          unfollow:
+            messsage: deixou de seguir você
       posts:
         successfully_created: Post criado com sucesso
         successfully_deleted: Post removido com sucesso

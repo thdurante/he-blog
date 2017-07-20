@@ -69,6 +69,12 @@ RSpec.describe User, type: :model do
           user1.follow(user2)
         }.to change(user2.followers, :count).by(1)
       end
+
+      it 'creates a new Notification' do
+        expect {
+          user1.follow(user2)
+        }.to change(Notification, :count).by(1)
+      end
     end
   end
 
@@ -86,6 +92,12 @@ RSpec.describe User, type: :model do
         expect {
           user1.unfollow(user2)
         }.to change(user2.followers, :count).by(-1)
+      end
+
+      it 'creates a new Notification' do
+        expect {
+          user1.unfollow(user2)
+        }.to change(Notification, :count).by(1)
       end
     end
   end

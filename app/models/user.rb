@@ -26,10 +26,12 @@ class User < ApplicationRecord
 
   def follow(other_user)
     following << other_user
+    Notification.create(recipient: other_user, user: self, action: 'followed', notifiable: other_user)
   end
 
   def unfollow(other_user)
     following.delete(other_user)
+    Notification.create(recipient: other_user, user: self, action: 'unfollowed', notifiable: other_user)
   end
 
   def following?(other_user)
