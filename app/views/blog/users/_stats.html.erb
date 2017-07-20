@@ -1,13 +1,13 @@
 <!-- BEGIN INFO -->
 <ul class="list-group list-group-unbordered">
   <li class="list-group-item">
-    <b><%= t('application.views.blog.followers') %></b>
+    <b><%= t('application.views.blog.followers') %></b> <small>(<%= t('application.views.blog.click_for_details') %>)</small>
     <%= link_to followers_user_path(@user), class: 'pull-right' do %>
       <%= @user.followers.count %>
     <% end %>
   </li>
   <li class="list-group-item">
-    <b><%= t('application.views.blog.following') %></b>
+    <b><%= t('application.views.blog.following') %></b> <small>(<%= t('application.views.blog.click_for_details') %>)</small>
     <%= link_to following_user_path(@user), class: 'pull-right' do %>
       <%= @user.following.count %>
     <% end %>

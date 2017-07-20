@@ -287,6 +287,7 @@ pt-BR:
         shared_at: Compartilhado há
         no_posts: Ainda não existem posts para o usuário
         post_placeholder: 'Escreva algo para o mundo...'
+        click_for_details: 'Clique para detalhes →'
       static_pages:
         title: Início
         heading: Início
