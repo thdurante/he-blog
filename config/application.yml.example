@@ -1,0 +1,13 @@
+CODECOV_TOKEN: <TOKEN>
+AWS_REGION: <REGION>
+AWS_ACCESS_KEY_ID: <ACCESS_KEY_ID>
+AWS_SECRET_ACCESS_KEY: <SECRET_ACCESS_KEY>
+
+test:
+  S3_BUCKET_NAME: 'he-blog-test'
+
+development:
+  S3_BUCKET_NAME: 'he-blog-development'
+
+production:
+  S3_BUCKET_NAME: <BUCKET_NAME>

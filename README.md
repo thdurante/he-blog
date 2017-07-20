@@ -18,6 +18,24 @@ In the project's root directory:
 $ rails s
 ```
 
+## Env
+Create a new `config/application.yml` following this example:
+```
+CODECOV_TOKEN: <TOKEN>
+AWS_REGION: <REGION>
+AWS_ACCESS_KEY_ID: <ACCESS_KEY_ID>
+AWS_SECRET_ACCESS_KEY: <SECRET_ACCESS_KEY>
+
+test:
+  S3_BUCKET_NAME: 'he-blog-test'
+
+development:
+  S3_BUCKET_NAME: 'he-blog-development'
+
+production:
+  S3_BUCKET_NAME: <BUCKET_NAME>
+```
+
 ## Deploy
 First of all, to config action cable, read the [docs](https://blog.heroku.com/real_time_rails_implementing_websockets_in_rails_5_with_action_cable#deploying-our-application-to-heroku).
 Then, in the project's root directory:
